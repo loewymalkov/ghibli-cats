@@ -7,10 +7,10 @@ $(document).ready(function() {
   $('#cat-form').submit(function(event) {
     event.preventDefault();
     let catKey = $('#cat-list').val();
-    console.log(catKey);
+
     let request = new XMLHttpRequest();
     const url = `https://ghibliapi.herokuapp.com/people/${catKey}`
-    console.log('the url var', url);
+
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         const response = JSON.parse(this.responseText);
@@ -22,7 +22,9 @@ $(document).ready(function() {
     request.send();
 
     const getElements = function(response) {
-      $('#output').text(`${response.name}`);
+      $('#output').text(`This cat is called ${response.name}. It has ${response.eye_color} eyes, and ${response.hair_color} hair. To check out the movies it is in, click on: ${response.films[0]}.`);
+
+
 
       // $('.output').text(`The color of ${response.} is ${response.main.humidity}%`);
       // $('.showTemp').text(`The weather is ${response.weather[0].main} forever.`);
