@@ -22,12 +22,10 @@ $(document).ready(function() {
     request.send();
 
     const getElements = function(response) {
-      $('#output').text(`This cat is called ${response.name}. It has ${response.eye_color} eyes, and ${response.hair_color} hair. To check out the movies it is in, click on: ${response.films[0]}.`);
-
-
-
-      // $('.output').text(`The color of ${response.} is ${response.main.humidity}%`);
-      // $('.showTemp').text(`The weather is ${response.weather[0].main} forever.`);
+      $('#bio').text(`This cat is called ${response.name}. It has ${response.eye_color} eyes, and ${response.hair_color} hair.`);
+      $('#img').html(`<img src="insert api or html here" alt="ghibli-cat-image">`);
+      $("#films").html(`To check out the movie it is in, click on <a href="${response.films[0]}">this</a>.`);
+      
     }
   });
 });
