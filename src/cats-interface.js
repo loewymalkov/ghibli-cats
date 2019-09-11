@@ -6,12 +6,11 @@ import './styles.css';
 $(document).ready(function() {
   $('#cat-form').submit(function(event) {
     event.preventDefault();
-    let catIndex = $('#cat-form').val();
-
-
+    let catKey = $('#cat-list').val();
+    console.log(catKey);
     let request = new XMLHttpRequest();
-    const url = `https://ghibliapi.herokuapp.com/species/${catIndex}/`
-
+    const url = `https://ghibliapi.herokuapp.com/people/${catKey}`
+    console.log('the url var', url);
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         const response = JSON.parse(this.responseText);
@@ -23,7 +22,7 @@ $(document).ready(function() {
     request.send();
 
     const getElements = function(response) {
-      const cat0 = $('#output').text(`${response.name}`);
+      $('#output').text(`${response.name}`);
 
       // $('.output').text(`The color of ${response.} is ${response.main.humidity}%`);
       // $('.showTemp').text(`The weather is ${response.weather[0].main} forever.`);
