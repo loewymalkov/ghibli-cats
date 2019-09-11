@@ -1,0 +1,15 @@
+#bio {
+  background-color: blue;
+}
+
+#films {
+  background-color: green;
+}
+
+.column {
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
