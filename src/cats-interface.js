@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    const city = $('#location').val();
-    $('#location').val("");
+  $('#cat-form').submit(function(event) {
+    event.preventDefault();
+    let catIndex = $('#cat-form').val();
+
 
     let request = new XMLHttpRequest();
-    const url = `https://ghibliapi.herokuapp.com/species/${process.env.CATS_KEY}`
+    const url = `https://ghibliapi.herokuapp.com/species/${catIndex}/`
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
@@ -22,8 +23,10 @@ $(document).ready(function() {
     request.send();
 
     const getElements = function(response) {
-      $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-      $('.showTemp').text(`The weather is ${response.weather[0].main} forever.`);
+      const cat0 = $('#output').text(`${response.name}`);
+
+      // $('.output').text(`The color of ${response.} is ${response.main.humidity}%`);
+      // $('.showTemp').text(`The weather is ${response.weather[0].main} forever.`);
     }
   });
 });

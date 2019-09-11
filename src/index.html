@@ -5,10 +5,10 @@
   </head>
   <body>
     <div class="container">
-      <form class="" action="index.html" method="post">
+      <form id="cat-form" action="index.html" method="post">
         <select name="cat-list">
-          <option value="0">Jiji</option>
-          <option value="1">Catbus</option>
+          <option value=`${process.env.CATS_KEY}`>CATS_KEY</option>
+          <option value="">Catbus</option>
           <option value="2">Niya</option>
           <option value="3">Moon</option>
           <option value="4">Cat King</option>
@@ -17,10 +17,10 @@
           <option value="7">Baron Humbert von Gikkingen</option>
           <option value="8">Natori</option>
         </select>
-        <button type="button" id="submit-button" class="btn btn-info">Find Cat</button>
+        <button type="submit" class="btn btn-info">Find Cat</button>
       </form>
-      <div class="output">
-
+      <div id="output">
+       <!-- output for name -->
       </div>
     </div>
   </body>
