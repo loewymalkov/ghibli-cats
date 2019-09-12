@@ -1,13 +1,15 @@
 body {
-  background: url('https://wallpapertag.com/wallpaper/full/a/b/8/419851-studio-ghibli-wallpapers-1920x1080-desktop.jpg');
+  background: url('https://i.imgur.com/mA1U7ns.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 img {
-  width: 50%;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 2em;
+  display: block;
 }
 
 button {
@@ -21,8 +23,11 @@ label {
 
 .main-div {
   margin: 4em;
-
   padding: 10px;
+  background: rgba(122, 130, 136, 0.40);
+  width: 100em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #films {
