@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { CatBio } from './cat-bio.js';
+import { CatFilm } from './cat-film.js';
 
 $(document).ready(function() {
   $('#cat-form').submit(function(event) {
@@ -11,11 +12,18 @@ $(document).ready(function() {
 
     let catBio = new CatBio();
     let promise = catBio.getBioByCat(catKey);
+    let catFilm = new CatFilm();
+    let filmPromise = catFilm.getFilmByCat(catKey);
+
+    filmPromise.then(function(response) {
+      const body = JSON.parse(response);
+      $("#film").html(`<li class="list-group-item"> Title: ${body.title}</li> <li class="list-group-item"> ${body.description}</li><li class="list-group-item"> Director: ${body.director}</li><li class="list-group-item"> Producer: ${body.producer}</li> <li class="list-group-item"> Release Date: ${body.release_date}</li> <li class="list-group-item"> RT Score: ${body.rt_score}</li>`);
+      $('#cat-content').show();
+    });
 
     promise.then(function(response) {
       const body = JSON.parse(response);
 
-      $("#films").html(`To check out the movie it is in, click on <a href="${body.films[0]}">this</a>.`);
       $('#bio').html(`<li class="list-group-item"> Name: ${body.name}</li> <li class="list-group-item"> Gender: ${body.gender}</li><li class="list-group-item"> Age: ${body.age}</li><li class="list-group-item"> Eye Color: ${body.eye_color}</li> <li class="list-group-item"> Hair Color: ${body.hair_color}</li>`);
 
       if (`${body.name}` === 'Jiji') {
