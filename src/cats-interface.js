@@ -2,27 +2,15 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { CatBio } from './cat-bio.js';
 
 $(document).ready(function() {
   $('#cat-form').submit(function(event) {
     event.preventDefault();
     let catKey = $('#cat-list').val();
 
-    let promise = new Promise(function(resolve, reject) {
-      let request = new XMLHttpRequest();
-      const url = `https://ghibliapi.herokuapp.com/people/${catKey}`
-      
-      request.onload = function() {
-        if (this.status === 200) {
-          resolve(request.response);
-        } else {
-          reject(Error(request.statusText));
-        }
-      }
-
-      request.open("GET", url, true);
-      request.send();
-    });
+    let catBio = new CatBio();
+    let promise = catBio.getBioByCat(catKey);
 
     promise.then(function(response) {
       const body = JSON.parse(response);
