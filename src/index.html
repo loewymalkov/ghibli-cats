@@ -4,8 +4,10 @@
   <title>Ghibli Cats</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container main-div">
     <form id="cat-form">
+      <label for="cat-form">Which cat would you like to know about?</label>
+      <br>
       <select id="cat-list">
         <option value="${process.env.JIJI_KEY}">Jiji</option>
         <option value="${process.env.CATBUS_KEY}">Catbus</option>
