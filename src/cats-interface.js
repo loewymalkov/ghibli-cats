@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     filmPromise.then(function(response) {
       const body = JSON.parse(response);
-      $("#film").html(`<li class="list-group-item"> Title: ${body.title}</li> <li class="list-group-item"> ${body.description}</li><li class="list-group-item"> Director: ${body.director}</li><li class="list-group-item"> Producer: ${body.producer}</li> <li class="list-group-item"> Release Date: ${body.release_date}</li> <li class="list-group-item"> RT Score: ${body.rt_score}</li>`);
+      $("#film").html(`<li class="list-group-item"> Title: ${body.title}</li><li class="list-group-item"> Director: ${body.director}</li><li class="list-group-item"> Producer: ${body.producer}</li> <li class="list-group-item"> Release Date: ${body.release_date}</li> <li class="list-group-item"> RT Score: ${body.rt_score}</li> <li class="list-group-item"> ${body.description}</li>`);
       $('#cat-content').show();
     });
 
