@@ -24,7 +24,7 @@ $(document).ready(function() {
     const getElements = function(response) {
 
       $("#films").html(`To check out the movie it is in, click on <a href="${response.films[0]}">this</a>.`);
-      $('#bio').text(`This cat is called ${response.name}. It has ${response.eye_color} eyes, and ${response.hair_color} hair.`);
+      $('#bio').html(`<li class="list-group-item"> Name: ${response.name}</li> <li class="list-group-item"> Eye Color: ${response.eye_color}</li> <li class="list-group-item"> Hair Color: ${response.hair_color}</li>`);
 
       if (`${response.name}` === 'Jiji') {
         ($("#img").html(`<img src="https://vignette.wikia.nocookie.net/studio-ghibli/images/6/67/Jiji.png/revision/latest?cb=20110716012648" alt="picture of Jiji">`));
@@ -45,6 +45,7 @@ $(document).ready(function() {
       } else if (`${response.name}` === 'Natori') {
         ($("#img").html(`<img src="https://vignette.wikia.nocookie.net/studio-ghibli/images/c/c4/Natori.jpg/revision/latest?cb=20181014014105" alt="picture of Natori">`));
       }
+      $('#cat-content').show();
   };
 });
 });

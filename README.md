@@ -1,30 +1,31 @@
-# weather
+# Ghibli-cats
 
-weather project
+A learning project built to find info about cats in Ghibli movies using an API call.
 
-### by Erin Deuel and Loewy Malkovich on 09/09/2019.
+### by Brendon Tse and Loewy Malkovich on Sep. 11 to 12 2019.
 
 ## Description
 
-## SPECS
+Our webpage lets the user select a cat from a Studio Ghibli movie. Displays a brief bio, image and filmography for the selected cat. The bio is pulled straight from the API, while IMDB and wikiFandom are used for assets for images and film links.
 
 
 ## SET-UP
 
-Open file browser.
+Open file in a browser, use select form to view info about the cats.
 
 ## Known Bugs
 
+N/A
 
 ## Support and Contact
-please contact
+
 Loewy Malkovich at loewymalkov@gmail.com
 or
-Erin Deuel at end.gaia@gmail.com
+Brendon Tse at brendonjtse@gmail.com
 
 ## Technology Used
 
-javascript, CSS, jasmine, karma, webpack, npm
+javascript, CSS, jasmine, karma, webpack, npm, ghibliapi.herokuapp, wikiFandom and IMDB
 
 ## LICENSE
 

@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ghibli Cats</title>
-  </head>
-  <body>
-    <div class="container">
-      <form id="cat-form">
-        <select id="cat-list">
-          <option value="${process.env.JIJI_KEY}">Jiji</option>
-          <option value="${process.env.CATBUS_KEY}">Catbus</option>
-          <option value="${process.env.NIYA_KEY}">Niya</option>
-          <option value="${process.env.MOON_KEY}">Moon</option>
-          <option value="${process.env.CAT_KING_KEY}">Cat King</option>
-          <option value="${process.env.YUKI_KEY}">Yuki</option>
-          <option value="${process.env.HARU_KEY}">Haru</option>
-          <option value="${process.env.BARON_HUMBERT_VON_GIKKINGEN_KEY}">Baron Humbert von Gikkingen</option>
-          <option value="${process.env.NATORI_KEY}">Natori</option>
-        </select>
-        <button type="submit" class="btn btn-info">Find Cat</button>
-      </form>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="container" id="img">
-              <!-- image -->
-            </div>
-            <div class="container" id="bio">
-              <!-- bio -->
-            </div>
+<head>
+  <title>Ghibli Cats</title>
+</head>
+<body>
+  <div class="container">
+    <form id="cat-form">
+      <select id="cat-list">
+        <option value="${process.env.JIJI_KEY}">Jiji</option>
+        <option value="${process.env.CATBUS_KEY}">Catbus</option>
+        <option value="${process.env.NIYA_KEY}">Niya</option>
+        <option value="${process.env.MOON_KEY}">Moon</option>
+        <option value="${process.env.CAT_KING_KEY}">Cat King</option>
+        <option value="${process.env.YUKI_KEY}">Yuki</option>
+        <option value="${process.env.HARU_KEY}">Haru</option>
+        <option value="${process.env.BARON_HUMBERT_VON_GIKKINGEN_KEY}">Baron Humbert von Gikkingen</option>
+        <option value="${process.env.NATORI_KEY}">Natori</option>
+      </select>
+      <button type="submit" class="btn btn-info">Find Cat</button>
+    </form>
+    <div class="container" id="cat-content" >
+      <div class="row">
+        <div class="col-8">
+          <div class="container" id="img">
+            <!-- image -->
           </div>
-          <div class="col-sm-4">
-            <div class="container" id="films">
-              <!-- films -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="font-weight-bold mb-3">Bio</h5>
+              <ul class="list-group list-group-flush" id="bio">
+                <!-- bio -->
+              </ul>
             </div>
+
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="container" id="films">
+            <!-- films -->
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
